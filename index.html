@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EUROSOL – Válasszon irányt</title>
+<meta name="description" content="EUROSOL – Euro-Solutions műanyag-kereskedelem és Eurosol Racing Team Hungary. Válassza ki, melyik oldalra lép tovább.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="EUROSOL.HU">
+<meta property="og:description" content="Euro-Solutions műanyag-kereskedelem · Eurosol Racing Team Hungary">
+<meta property="og:image" content="/assets/rally-bg.jpg">
+<meta name="theme-color" content="#181a33">
+<link rel="preload" as="image" href="assets/rally-bg.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <img class="brand" src="assets/eurosol-hu.svg" alt="EUROSOL.HU" width="388" height="72">
+  <div class="lang" role="group" aria-label="Nyelv / Language / Sprache / Język">
+    <button type="button" data-lang="hu" aria-pressed="true">HU</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    <button type="button" data-lang="pl" aria-pressed="false">PL</button>
+  </div>
+</header>
+
+<main class="split">
+  <a class="panel plastics" href="https://plastic-eurosol.netlify.app" aria-label="Euro-Solutions">
+    <div class="bg" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 760px)" srcset="assets/plastics-bg-1024.webp" type="image/webp">
+        <source srcset="assets/plastics-bg.webp" type="image/webp">
+        <img src="assets/plastics-bg.jpg" alt="">
+      </picture>
+    </div>
+    <div class="content">
+      <p class="kicker" data-i18n="p_kicker">Az Ön műanyag-kereskedője</p>
+      <img class="logo logo-es" src="assets/euro-solutions-logo.png" alt="euro-solutions" width="728" height="264">
+      <p class="lead" data-i18n="p_lead">Műanyag alapanyagok, granulátumok és újrahasznosított polimerek – megbízható beszerzés és kereskedelem Európa-szerte.</p>
+      <span class="cta"><span data-i18n="p_cta">Tovább a kereskedelemhez</span> <i aria-hidden="true">→</i></span>
+    </div>
+  </a>
+
+  <a class="panel racing" href="https://eurosol-racing-team-hungary.netlify.app" aria-label="Eurosol Racing Team Hungary">
+    <div class="bg" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 760px)" srcset="assets/rally-bg-1024.webp" type="image/webp">
+        <source srcset="assets/rally-bg.webp" type="image/webp">
+        <img src="assets/rally-bg.jpg" alt="">
+      </picture>
+    </div>
+    <div class="content">
+      <p class="kicker" data-i18n="r_kicker">Az Ön versenypartnere</p>
+      <img class="logo logo-erth" src="assets/erth-logo.svg" alt="Eurosol Racing Team Hungary" width="392" height="140">
+      <p class="lead" data-i18n="r_lead">Csapatunk, autóink, versenynaptárunk és eredményeink – kövesse az Eurosol Racing Team-et a magyar rallypályákon.</p>
+      <span class="cta"><span data-i18n="r_cta">Tovább a csapathoz</span> <i aria-hidden="true">→</i></span>
+    </div>
+  </a>
+</main>
+
+<div class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<footer class="foot">
+  <span>© <span id="yr">2026</span> EUROSOL</span>
+  <a href="mailto:info@eurosol.hu">info@eurosol.hu</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

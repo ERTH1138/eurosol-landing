@@ -1,0 +1,18 @@
+# eurosol.hu – nyitóoldal
+
+Kétirányú nyitóoldal a www.eurosol.hu címre:
+
+- **Euro-Solutions** (műanyag-kereskedelem) → https://plastic-eurosol.netlify.app
+- **Eurosol Racing Team** (rally) → https://eurosol-racing-team-hungary.netlify.app
+
+Logók és háttérkép: `assets/` (márkaszínek: #181a33, #172f50, #1c58aa, #43b2e9, #fff200, #ffbd00).
+
+Statikus HTML/CSS/JS, build nélkül. HU/EN/DE/PL nyelvváltó (`script.js`).
+A célcímeket az `index.html` két `href`-je adja meg.
+
+## Képek
+- Rally háttér: saját fotó (hatter.jpg)
+- Euro-Solutions háttér: Pixabay, Pexels – https://www.pexels.com/photo/assorted-color-illustration-531765/ (Pexels License, ingyenes kereskedelmi használat)
+
+## Netlify
+Publish directory: `.` (a `netlify.toml` beállítja). Build command: nincs.

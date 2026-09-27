@@ -1,0 +1,107 @@
+/* Brand colours taken from the supplied logos */
+:root{
+  --erth-navy:#181a33;   /* Eurosol Racing Team background */
+  --es-navy:#172f50;     /* euro-solutions background */
+  --blue:#1c58aa;        /* stripe dark blue */
+  --sky:#43b2e9;         /* stripe light blue */
+  --yellow:#fff200;      /* ERTH yellow */
+  --es-yellow:#ffbd00;   /* euro-solutions yellow */
+  --font:"Exo 2", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--erth-navy);color:#fff;font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+
+/* Header / footer */
+.top,.foot{position:fixed;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:24px clamp(16px,4vw,48px);pointer-events:none}
+.top{top:0}
+.foot{bottom:0;font-size:13px;color:rgba(255,255,255,.75)}
+.top>*,.foot>*{pointer-events:auto}
+.brand{height:auto;width:clamp(150px,16vw,230px)}
+.lang{display:flex;background:rgba(24,26,51,.6);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:4px}
+.lang button{font:600 13px var(--font);letter-spacing:.06em;color:rgba(255,255,255,.75);background:none;border:0;padding:7px 14px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--erth-navy)}
+.lang button:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.foot a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.foot a:hover{color:#fff;border-color:#fff}
+
+/* Split layout */
+.split{display:flex;height:100vh;height:100dvh}
+.panel{position:relative;flex:1;display:flex;align-items:flex-end;text-decoration:none;overflow:hidden;isolation:isolate;transition:flex-grow .7s cubic-bezier(.2,.8,.2,1)}
+.split:hover .panel{flex-grow:.8}
+.split .panel:hover,.split .panel:focus-visible{flex-grow:1.3}
+.panel:focus-visible{outline:none}
+.panel:focus-visible .cta{outline:2px solid #fff;outline-offset:4px}
+.bg{position:absolute;inset:0;z-index:-1;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.panel:hover .bg{transform:scale(1.035)}
+
+/* euro-solutions side */
+.plastics .bg{background:
+  radial-gradient(90% 70% at 15% 10%, #22406a 0%, transparent 60%),
+  linear-gradient(170deg, var(--es-navy) 0%, #0f2240 100%)}
+.plastics::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--es-yellow);z-index:1}
+
+/* Rally side */
+.bg picture,.bg img{width:100%;height:100%}
+.plastics .bg img{object-fit:cover;object-position:35% 50%}
+.plastics .bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(to top, rgba(23,47,80,.94) 0%, rgba(23,47,80,.6) 40%, rgba(23,47,80,.2) 75%),
+  linear-gradient(to right, rgba(23,47,80,.6), rgba(23,47,80,.1) 60%)}
+.racing .bg img{object-fit:cover;object-position:75% 50%}
+.racing .bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(to top, rgba(24,26,51,.9) 0%, rgba(24,26,51,.45) 38%, rgba(24,26,51,0) 62%),
+  linear-gradient(to right, rgba(24,26,51,.6), rgba(24,26,51,0) 55%)}
+
+/* Stripe motif from the logo, along the seam */
+.stripes{position:fixed;z-index:4;left:50%;top:0;bottom:0;width:18px;transform:translateX(-50%) skewX(-8deg);display:flex;flex-direction:column;pointer-events:none;transition:opacity .4s}
+.stripes i{flex:1;display:block}
+.stripes i:nth-child(1){background:var(--blue);flex:3}
+.stripes i:nth-child(2){background:var(--sky);flex:4}
+.stripes i:nth-child(3){background:var(--yellow);flex:1.3}
+.stripes i:nth-child(4){background:var(--yellow);flex:.7;opacity:.85}
+.split:hover ~ .stripes{opacity:0}
+
+/* Content */
+.content{position:relative;width:100%;max-width:600px;padding:0 clamp(24px,5vw,72px) clamp(90px,13vh,130px)}
+.kicker{font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:28px;height:3px;transform:skewX(-35deg)}
+.plastics .kicker::before{background:var(--es-yellow)}
+.racing .kicker::before{background:var(--sky)}
+.logo{height:auto}
+.logo-es{width:min(400px,100%);margin-left:-6px}
+.logo-erth{width:min(440px,100%)}
+.lead{margin-top:24px;font-size:clamp(15px,1.1vw,17px);font-weight:500;line-height:1.55;color:rgba(255,255,255,.85);max-width:42ch}
+.cta{display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:14px 24px;font-weight:700;font-size:15px;letter-spacing:.02em;border-radius:4px;transition:background .3s,color .3s}
+.cta i{font-style:normal;transition:transform .3s}
+.panel:hover .cta i{transform:translateX(4px)}
+.plastics .cta{background:var(--es-yellow);color:var(--es-navy)}
+.plastics:hover .cta{background:#ffcb33}
+.racing .cta{background:var(--sky);color:var(--erth-navy)}
+.racing:hover .cta{background:#6cc6f0}
+
+/* Mobile: stack */
+@media (max-width: 760px){
+  body{overflow:auto}
+  .split{flex-direction:column;height:auto;min-height:100dvh}
+  .panel{min-height:52dvh;flex:1 1 auto}
+  .split:hover .panel,.split .panel:hover{flex-grow:1}
+  .top{position:absolute;padding-top:18px}
+  .plastics .content{padding-top:100px}
+  .content{padding-bottom:44px}
+  .racing{min-height:62dvh}
+  .racing .content{padding-bottom:76px}
+  .racing .bg img{object-position:70% 50%}
+  .stripes{display:none}
+  .brand{width:132px}
+  .lang button{padding:6px 10px;font-size:12px}
+  .foot{position:static;background:var(--erth-navy);padding:18px 16px}
+  .racing .content{padding-bottom:40px}
+  .logo-es{width:min(300px,100%)}
+  .logo-erth{width:min(320px,100%)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition:none!important}
+}
