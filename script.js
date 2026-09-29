@@ -39,7 +39,7 @@
   };
 
   function apply(lang) {
-    var d = dict[lang] || dict.hu;
+    var d = dict[lang] || dict.en;
     document.documentElement.lang = lang;
     document.title = d.title;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
@@ -49,14 +49,10 @@
     document.querySelectorAll(".lang button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
     });
-    try { localStorage.setItem("eurosol-lang", lang); } catch (e) {}
   }
 
-  var saved = null;
-  try { saved = localStorage.getItem("eurosol-lang"); } catch (e) {}
-  var nav = (navigator.language || "hu").toLowerCase().slice(0, 2);
-  var initial = (saved && dict[saved]) ? saved : (dict[nav] ? nav : "en");
-  apply(initial);
+  // Mindig angolul nyílik meg; a nyelvváltó gombokkal lehet váltani.
+  apply("en");
 
   document.querySelectorAll(".lang button").forEach(function (b) {
     b.addEventListener("click", function () { apply(b.dataset.lang); });
