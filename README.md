@@ -20,7 +20,7 @@ Publish directory: `.` (a `netlify.toml` beállítja). Build command: nincs.
 ## Rivergate aloldal (jelszóval védett)
 `rivergate/` → https://www.eurosol.hu/rivergate
 
-A védelmet a `netlify/edge-functions/rivergate-auth.ts` edge function adja (HTTP Basic Auth).
-A jelszó a Netlify `RIVERGATE_PASSWORD` környezeti változójában van (Project configuration → Environment variables);
-felhasználónévnek bármi megadható. Ha a változó nincs beállítva, az oldal zárva marad.
+A védelmet a `netlify/edge-functions/rivergate-auth.ts` edge function adja: saját belépőoldal, csak jelszóval;
+sikeres belépés után 30 napig érvényes süti. A jelszó a Netlify `RIVERGATE_PASSWORD` környezeti változójában van
+(Project configuration → Environment variables). Ha a változó nincs beállítva, az oldal zárva marad.
 Jelszócsere után új deploy kell (Deploys → Trigger deploy).
