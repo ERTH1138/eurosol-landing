@@ -17,10 +17,17 @@ A célcímeket az `index.html` két `href`-je adja meg.
 ## Netlify
 Publish directory: `.` (a `netlify.toml` beállítja). Build command: nincs.
 
-## Rivergate aloldal (jelszóval védett)
+## Jelszóval védett aloldalak
+
+| Aloldal | Mappa | Jelszó (Netlify env) |
+|---|---|---|
+| https://www.eurosol.hu/rivergate | `rivergate/` | `RIVERGATE_PASSWORD` |
+| https://www.eurosol.hu/ese | `ese/` (Euro Solar Energy, EN/DE) | `ESE_PASSWORD` |
+
+### Rivergate
 `rivergate/` → https://www.eurosol.hu/rivergate
 
-A védelmet a `netlify/edge-functions/rivergate-auth.ts` edge function adja: saját belépőoldal, csak jelszóval;
+A védelmet a `netlify/edge-functions/password-protect.ts` edge function adja (új aloldal: `AREAS` lista + `config.path`): saját belépőoldal, csak jelszóval;
 sikeres belépés után 30 napig érvényes süti. A jelszó a Netlify `RIVERGATE_PASSWORD` környezeti változójában van
 (Project configuration → Environment variables). Ha a változó nincs beállítva, az oldal zárva marad.
 Jelszócsere után új deploy kell (Deploys → Trigger deploy).
