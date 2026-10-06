@@ -126,7 +126,10 @@ html[data-lang=en] .lang [data-set=en],html[data-lang=de] .lang [data-set=de]{ba
 .owner .card{height:100%}
 .quote{font-style:italic;font-size:clamp(16px,1.5vw,19px)}
 @media (max-width:700px){.owner{grid-template-columns:1fr}}
-.logos{display:flex;gap:32px;justify-content:center;align-items:center;margin-top:30px;flex-wrap:wrap;font-weight:600;color:var(--muted)}
+.logos{display:flex;gap:16px 40px;justify-content:center;align-items:center;margin-top:34px;flex-wrap:wrap}
+.logos a{display:block;background:#fff;border-radius:14px;padding:10px 18px;transition:transform .2s,box-shadow .2s}
+.logos a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.logos img{height:72px;width:auto}
 
 /* structure diagram */
 .org{display:grid;gap:10px;justify-items:center}
@@ -428,7 +431,10 @@ footer img{width:130px}
           <li><span lang="en">Early adopter of <b class="hl">bioplastics</b> to reduce traditional plastic reliance</span><span lang="de">Früher Einsatz von <b class="hl">Biokunststoffen</b>, um die Abhängigkeit von herkömmlichen Kunststoffen zu verringern</span></li>
         </ul></div></div>
     </div>
-    <div class="logos"><span>euro-solutions</span><span>Vista Plus Offices</span></div>
+    <div class="logos">
+      <a href="https://plastic.eurosol.hu" target="_blank" rel="noopener"><img src="img/logo_eurosolutions.webp" alt="euro-solutions" width="575" height="220" loading="lazy"></a>
+      <a href="https://www.vpo.hu" target="_blank" rel="noopener"><img src="img/logo_vpo.webp" alt="Vista Plus Offices" width="435" height="220" loading="lazy"></a>
+    </div>
   </div>
 </section>
 
