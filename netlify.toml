@@ -6,3 +6,10 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Lovászi Solar Energy tracker (separate Netlify project), served at eurosol.hu/solar
+[[redirects]]
+  from = "/solar/*"
+  to = "https://lovaszi-solar-energy.netlify.app/:splat"
+  status = 200
+  force = true
