@@ -2,8 +2,8 @@
 
 Kétirányú nyitóoldal a www.eurosol.hu címre:
 
-- **Euro-Solutions** (műanyag-kereskedelem) → https://plastic-eurosol.netlify.app
-- **Eurosol Racing Team** (rally) → https://eurosol-racing-team-hungary.netlify.app
+- **Euro-Solutions** (műanyag-kereskedelem) → https://plastic.eurosol.hu
+- **Eurosol Racing Team** (rally) → https://rally.eurosol.hu
 
 Logók és háttérkép: `assets/` (márkaszínek: #181a33, #172f50, #1c58aa, #43b2e9, #fff200, #ffbd00).
 
