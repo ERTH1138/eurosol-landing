@@ -17,6 +17,12 @@ A célcímeket az `index.html` két `href`-je adja meg.
 ## Netlify
 Publish directory: `.` (a `netlify.toml` beállítja). Build command: nincs.
 
+## Nyilvános aloldalak
+
+| Aloldal | Mappa | Tartalom |
+|---|---|---|
+| https://www.eurosol.hu/snus | `snus/` | AROMA Pouches prezentáció (15 dia), magyarországi forgalmazó: Euro-Solutions Kft. |
+
 ## Jelszóval védett aloldalak
 
 | Aloldal | Mappa | Jelszó (Netlify env) |
