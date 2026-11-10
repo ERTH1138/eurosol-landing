@@ -23,6 +23,7 @@ Publish directory: `.` (a `netlify.toml` beállítja). Build command: nincs.
 |---|---|---|
 | https://www.eurosol.hu/snus | `snus/` | AROMA Pouches prezentáció (15 dia), magyarországi forgalmazó: Euro-Solutions Kft. |
 | https://www.eurosol.hu/madejwrobel | `madejwrobel/` | Madej Wróbel prezentáció (23 dia), magyarországi forgalmazó: Euro-Solutions Kft. |
+| https://www.eurosol.hu/KIQ | `KIQ/` | KIQ Energy Shot prezentáció (12 dia), magyarországi forgalmazó: Euro-Solutions Kft. |
 
 ## Jelszóval védett aloldalak
 
