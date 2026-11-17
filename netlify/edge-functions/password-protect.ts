@@ -105,9 +105,9 @@ ${error ? `<div class="err">${area.error}</div>` : ""}
 export default async (req: Request, context: Context) => {
   const url = new URL(req.url);
   const segment = url.pathname.split("/")[1];
-  // A Rivergate oldal átköltözött a vpo.hu/rivergate címre (a vpo.hu a netlify.app címen át proxyzza, azt kiszolgáljuk).
+  // A Rivergate oldal megszűnt az eurosol.hu-n, csak a vpo.hu/rivergate címen érhető el (a vpo.hu a netlify.app címen át proxyzza, azt kiszolgáljuk).
   if (segment === "rivergate" && /(^|\.)eurosol\.hu$/.test(url.hostname)) {
-    return Response.redirect("https://vpo.hu" + url.pathname + url.search, 301);
+    return new Response("Not Found", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex, nofollow" } });
   }
   const area = AREAS.find((a) => a.id === segment);
   if (!area) return context.next();
