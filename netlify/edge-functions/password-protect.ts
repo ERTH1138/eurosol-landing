@@ -103,7 +103,12 @@ ${error ? `<div class="err">${area.error}</div>` : ""}
   );
 
 export default async (req: Request, context: Context) => {
-  const segment = new URL(req.url).pathname.split("/")[1];
+  const url = new URL(req.url);
+  const segment = url.pathname.split("/")[1];
+  // A Rivergate oldal átköltözött a vpo.hu/rivergate címre (a vpo.hu a netlify.app címen át proxyzza, azt kiszolgáljuk).
+  if (segment === "rivergate" && /(^|\.)eurosol\.hu$/.test(url.hostname)) {
+    return Response.redirect("https://vpo.hu" + url.pathname + url.search, 301);
+  }
   const area = AREAS.find((a) => a.id === segment);
   if (!area) return context.next();
   const cookie = `${area.id}_auth`;
