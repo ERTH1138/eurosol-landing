@@ -13,3 +13,10 @@
   to = "https://lovaszi-solar-energy.netlify.app/:splat"
   status = 200
   force = true
+
+# Dispo diszpókezelő (külön Netlify projekt: eurosol-dispo), served at www.eurosol.hu/dispo/
+[[redirects]]
+  from = "/dispo/*"
+  to = "https://eurosol-dispo.netlify.app/:splat"
+  status = 200
+  force = true
